@@ -1,6 +1,18 @@
 
 
 image = document.getElementById("image");
+torcount = document.getElementById("tortilla_count");
+velcount = document.getElementById("velocity");
+
+function round(num, places) {
+    var multiplier = Math.pow(10, places);
+    var out = Math.round(num * multiplier) / multiplier
+    if (out % 1 != 0){
+        return out;
+    } else {
+        return out + ".0"
+    }
+}
 
 let acc = 10;
 let drag = 0.3;
@@ -12,9 +24,16 @@ let bgVel = 10;
 let bgPos = 1;
 let bgDamp = 0.2;
 
+let tortillas = 0;
+
 function spin(){
     bgVel += bgAcc;
     vel += acc + Math.floor((Math.random() - 0.5) * 10)
+
+    tortillas += Math.round(Math.round(vel) / 10)
+    torcount.innerText = tortillas
+
+    console.log(tortillas)
 }
 
 function animate() {
@@ -56,7 +75,7 @@ function animate() {
     drag = vel / 200
     bgDamp = bgVel / 25
 
-    console.log(vel + " Drag: " + drag)
+    velcount.innerText = round(vel,1) + " RPM"
     
 }
 
