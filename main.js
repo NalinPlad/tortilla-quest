@@ -1,3 +1,5 @@
+
+
 image = document.getElementById("image");
 
 let acc = 10;
@@ -51,7 +53,7 @@ function animate() {
     }
 
 
-    drag = vel / 150
+    drag = vel / 200
     bgDamp = bgVel / 25
 
     console.log(vel + " Drag: " + drag)
