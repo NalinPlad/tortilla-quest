@@ -85,7 +85,8 @@ h1 {
 
 
 #image {
-    height: 50vh;
+    height: 25rem;
+    width: 25rem;
     user-select: none;
     -webkit-user-select: none;
 }
